@@ -195,6 +195,7 @@ export function Lobby({ socket, roomId, playerId, room, onImagesCached }: LobbyP
               type="submit" 
               className="w-full h-14 text-lg fun-button bg-gradient-to-r from-purple-600 to-pink-600" 
               disabled={!name.trim()}
+              loading={isSubmittingName}
             >
               {isSubmittingName ? "Saving..." : "Continue"}
             </Button>
@@ -354,6 +355,7 @@ export function Lobby({ socket, roomId, playerId, room, onImagesCached }: LobbyP
               disabled={!allPlayersReady || !syncComplete || isStartingGame}
               className="w-full h-16 text-xl fun-button bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 shadow-lg shadow-green-500/30"
               size="lg"
+              loading={isStartingGame}
             >
             {isStartingGame 
               ? "Starting..." 
